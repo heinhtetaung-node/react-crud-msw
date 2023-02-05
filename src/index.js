@@ -6,6 +6,11 @@ import reportWebVitals from "./reportWebVitals";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Crud from "./Crud";
+import { worker } from "./mock/browser";
+
+if (process.env.NODE_ENV === "development") {
+  worker.start();
+}
 
 const router = createBrowserRouter([
   {
